@@ -243,7 +243,4 @@ const SignOut = styled.div`
     }
 `
 
-
-// 2:16:09;
-
 export default Header;
