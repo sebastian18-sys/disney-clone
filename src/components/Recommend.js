@@ -1,17 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from "react-router-dom"
+import { useSelector } from "react-redux";
+import { selectRecommend } from "../features/movie/movieSlice"; 
 
 function Recommend() {
+
+    // GET data in Store Redux
+    const movies = useSelector(selectRecommend);
+    console.log(`CONFE --> ${movies}`);
+    console.log(movies);
+
   return (
       <Container>
           <h4>Recommend for You</h4>
           <Content>
-              <Wrap>
-                  <Link to="/">
-                      <img src='https://prod-ripcut-delivery.disney-plus.net/v1/variant/' />
-                  </Link>
-              </Wrap>
+              {movies && 
+                movies.map((movie, key) => (
+                    <Wrap key={key}>
+                        {console.log("efecillo", movie.cardImg)}
+                        {movie.id}
+                        <Link to={`/detail/${movie.id}`}>
+                            <img src={movie.cardImg} alt={movie.title} />
+                        </Link>
+                    </Wrap>
+                ))
+              }
           </Content>
       </Container>
     );

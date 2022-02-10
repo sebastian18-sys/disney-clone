@@ -39,11 +39,14 @@ function Header() {
         }))
     };
 
+    // Control users (exists or not)
     useEffect(() => {
         onAuthStateChanged(auth, async(user) => {
             if(user) {
                 setUser(user)
-                navigate("/home")
+                navigate("/home");
+            } else {
+                navigate("/");
             }
         })
     }, [userName])

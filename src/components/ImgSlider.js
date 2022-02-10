@@ -6,6 +6,7 @@ import Slider from 'react-slick';
 
 function ImgSlider() {
 
+    // Config Slider
     let settings = {
         dots: true,
         infinite: true,
@@ -16,25 +17,24 @@ function ImgSlider() {
     };
 
   return (
- 
     <Carousel {...settings}>
         <Wrap>
-            <a>
+            <a href='/home'>
                 <img src='/images/slider-badging.jpg' alt='slider image 1' />
             </a>
         </Wrap>
         <Wrap>
-            <a>
+            <a href='/home'>
                 <img src='/images/slider-badag.jpg' alt='slider image 2' />
             </a>
         </Wrap>
         <Wrap>
-            <a>
+            <a href='/home'>
                 <img src='/images/slider-scale.jpg' alt='slider image 3' />
             </a>
         </Wrap>
         <Wrap>
-            <a>
+            <a href='/home'>
                 <img src='/images/slider-scales.jpg' alt='slider image 4' />
             </a>
         </Wrap>
